@@ -1,0 +1,21 @@
+
+<div class="container ">
+  <h2>
+    Users
+  </h2>
+  <div class="container">
+  <ag-grid-angular style="width: 1010px; height: 400px;" class="ag-theme-fresh"
+                   [rowData]="rowData"
+                   [enableFilter]="true"
+                   [enableSorting]="true"
+                   rowSelection="single"
+                   (rowClicked)='onRowClicked($event)'
+                   [columnDefs]="columnDefs">
+  </ag-grid-angular>
+  <button (click)="addCustomer()" class="btn btn-primary" >ADD</button>
+  <span *ngIf="isSelected"> <button  class="btn btn-primary" (click)="updateCustomer()">UPDATE</button></span>
+  <span *ngIf="isSelected"> <button class="btn btn-primary" (click)="deleteCustomer()">DELETE</button></span>
+  </div>
+</div>
+
+
